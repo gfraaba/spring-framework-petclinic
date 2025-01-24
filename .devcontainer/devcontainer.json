@@ -1,6 +1,8 @@
 {
   "name": "Spring Framework Petclinic",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // https://mcr.microsoft.com/en-us/artifact/mar/devcontainers/universal/about
+  // *NOTE: ARM64 is not supported (able to pull ONLY tags 2.1-focal and 2.2.0-focal and they run on emulated x86_64/amd64)
+  "image": "mcr.microsoft.com/devcontainers/universal:2.2.0-focal",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
         "version": "17",
@@ -8,9 +10,13 @@
         "mavenVersion": "3.8.6"
     }
   },
-  "extensions": [
-    "vscjava.vscode-java-pack",
-    "redhat.vscode-xml",
-    "vmware.vscode-boot-dev-pack"
-  ]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-xml",
+        "vmware.vscode-boot-dev-pack"
+      ]
+    }
+  }
 }
